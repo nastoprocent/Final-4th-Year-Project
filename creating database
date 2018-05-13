@@ -1,0 +1,58 @@
+CREATE DATABASE IF NOT EXISTS `pentesting`;
+
+CREATE TABLE IF NOT EXISTS `pentesting`.`users` (
+  `userId` int(11) NOT NULL AUTO_INCREMENT,
+  `userName` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `userEmail` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
+  `userPass` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`userId`),
+  UNIQUE KEY `userEmail` (`userEmail`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 COLLATE=utf8_unicode_ci COMMENT='user data';
+
+CREATE TABLE IF NOT EXISTS `pentesting`.`chat` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `date_time` datetime NOT NULL,
+  `name` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `message` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS `pentesting`.`tcpscanlog` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `date_time` datetime NOT NULL,
+  `name` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `ipaddress` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `websitescanned` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS `pentesting`.`udpscanlog` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `date_time` datetime NOT NULL,
+  `name` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `ipaddress` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `websitescanned` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS `pentesting`.`sqlscanlog` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `date_time` datetime NOT NULL,
+  `name` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `ipaddress` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `websitescanned` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS `pentesting`.`whoisscanlog` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `date_time` datetime NOT NULL,
+  `name` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `ipaddress` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `websitescanned` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 COLLATE=utf8_unicode_ci;
